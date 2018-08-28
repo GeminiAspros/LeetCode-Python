@@ -57,10 +57,9 @@ class MyLinkedList(object):
         node = self.head
         count = 0
         while True:
+            # 如果位置不够则向前一步
             if count == (index-1):
-                temp = node.next_node
-                node.next_node = in_node
-                in_node.next_node = temp
+                node.next_node, in_node.next_node = in_node, node.next_node
                 self.length += 1
                 return
             count += 1
