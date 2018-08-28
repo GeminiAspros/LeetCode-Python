@@ -10,11 +10,8 @@ class MyLinkedList(object):
         self.head = None
         self.length = 0
 
-    def is_empty(self):
-        return self.length == 0
-
     def get(self, index):
-        if self.is_empty():
+        if self.length == 0:
             return -1
         if (index+1)> self.length or index < 0:
             return -1
@@ -70,7 +67,7 @@ class MyLinkedList(object):
             node = node.next_node
 
     def deleteAtIndex(self, index):
-        if self.is_empty():
+        if self.length == 0:
             return
         if index < 0 or index >= self.length:
             return
